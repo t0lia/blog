@@ -10,4 +10,4 @@ save:
 	git add .
 	git commit -m '-'
 	git push
-	ssh apozdniakov.com 'cd blog && make update'
+	ssh apozdniakov.com 'cd blog && git pull && make update'
