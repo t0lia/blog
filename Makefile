@@ -4,6 +4,7 @@ run:
 update:
 	pkill hugo || echo "hugo is not running"
 	nohup hugo server --bind="0.0.0.0" --port=1312 --baseUrl=blog.apozdniakov.com --appendPort=false &
+	echo "update finished"
 
 save:
 	git add .
