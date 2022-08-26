@@ -44,7 +44,10 @@ PUT /books
    }
 }
 ```
-- `DELETE articles` - delete the index
+- delete the index
+```
+DELETE articles
+```
 
 ### Mapping
 
@@ -125,14 +128,14 @@ PUT /books
 
 ## Documents
 
-- create
+- create and appoint an id
 ```
 POST books/_doc 
 {
   "message" : "test example message"
 }
 ```
-- upsert
+- update if exist or create new with given id
 ```
 POST books/_doc/100/
 {
