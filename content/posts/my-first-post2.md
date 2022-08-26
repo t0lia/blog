@@ -38,10 +38,17 @@ GET _cat/indices
 ```
 PUT /books
 {
-   "settings": {
-        "number_of_shards": 1,
-        "number_of_replicas": 1
-   }
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "message": {
+        "type": "text"
+      }
+    }
+  }
 }
 ```
 - delete the index
@@ -83,37 +90,6 @@ PUT /books
     "number_of_replicas": 1
   },
   "mappings": {
-    "dynamic": "strict",
-    "properties": {
-      "author": {
-        "type": "text"
-      },
-      "book": {
-        "type": "text"
-      },
-      "cite": {
-        "type": "text"
-      },
-      "created": {
-        "type": "date"
-      },
-      "length": {
-        "type": "long"
-      }
-    }
-  }
-}
-```
-
-
-```
-PUT /books
-{
-  "settings": {
-    "number_of_shards": 1,
-    "number_of_replicas": 1
-  },
-  "mappings": {
     "properties": {
       "message": {
         "type": "text"
@@ -121,9 +97,7 @@ PUT /books
     }
   }
 }
-
 ```
-
 ---
 
 ## Documents
@@ -137,14 +111,23 @@ POST books/_doc
 ```
 - update if exist or create new with given id
 ```
-POST books/_doc/100/
+PUT books/_doc/100
 {
   "message" : "id = 100"
 }
 ```
+- update 
+```
+POST books/_update/100
+{
+  "doc": {
+    "message": "value updated"
+  }
+}
+```
 - retrieve by id
 ```
-GET books/_doc/100/
+GET books/_doc/100
 ```
 
 
