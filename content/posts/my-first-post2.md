@@ -125,9 +125,46 @@ POST books/_update/100
   }
 }
 ```
+- optimistic locking update (checking whether fields *seq_no* and *primary_term* are the same as parameters)
+```
+POST books/_update/100?if_primary_term=1&if_seq_no=4
+{
+  "doc": {
+    "message": "vaule updated"
+  }
+}
+```
+- bulk operation (index - like PUT, create - like POST)
+```
+POST _bulk
+{"index":{"_index": "books", "_id":"LbqX2oIBBKykhdTgGVMY"}}
+{"message":"bulk insert data"}
+{"create":{"_index": "books", "_id":"LbqX2oIBBKykhdTgGVMZ"}}
+{"message":"bulk insert data"}
+```
+- bulk operation (update, delete)
+```
+POST _bulk
+{"update":{"_index": "books", "_id":"LbqX2oIBBKykhdTgGVMZ"}}
+{"doc":{"message":"bulk update data"}}
+{"delete":{"_index": "books", "_id":"LbqX2oIBBKykhdTgGVMZ"}}
+```
+- bulk operation single index short
+```
+POST books/_bulk
+{"update":{"_id":"LbqX2oIBBKykhdTgGVMZ"}}
+{"doc":{"message":"bulk update data"}}
+{"delete":{"_id":"LbqX2oIBBKykhdTgGVMZ"}}
+```
+
+
 - retrieve by id
 ```
 GET books/_doc/100
+```
+- delete by id
+```
+DELETE books/_doc/100
 ```
 
 
