@@ -1,5 +1,5 @@
 baseURL = "http://localhost"
-title = "Geekdocs"
+title = "apozdniakov"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false

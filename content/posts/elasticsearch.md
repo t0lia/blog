@@ -186,12 +186,14 @@ bash-3.2$ head -4 products-bulk.json
 
 ---
 
-![Example image](static/image.png)
-![](analyzer.png)
+![Example image](/static/analyzer.png)
+![Example image](/static/architecture.png)
 ## Analyze
 ![](https://www.elastic.co/guide/en/elasticsearch/client/net-api/current/analysis-chain.png)
 ### Testing analyzers
 [analyzers documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html)
+
+
 - standard analyzer example
 ``` js
 POST _analyze
