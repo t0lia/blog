@@ -1,4 +1,5 @@
-# apozdniakov tech notes
+#pozdniakov tech notes
+apozdniakov tech notes
 
 {{< columns >}}
 
@@ -11,6 +12,11 @@
 - [github](https://github.com/t0lia)
 - [gitlab](https://gitlab.com/t0lia)
 - [linkedin](https://www.linkedin.com/in/t0lia/)
+
+<div class="badge-base LI-profile-badge" data-locale="ru_RU" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="anatoly-pozdniakov-3b5387106" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ru.linkedin.com/in/anatoly-pozdniakov-3b5387106?trk=profile-badge">Anatoly Pozdniakov</a></div>
+              
+
+
 
 {{< /columns >}}
 
